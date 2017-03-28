@@ -75,55 +75,6 @@ class ViewController: UIViewController {
         
     }
     
-    func formatFirstNumber(number:Int){
-        
-        //manejamos los . decimales y los 0's
-        if (primerValor == "0" && number == 10) {
-            primerValor = "0.";
-            decimalAgregado = true;
-            return;
-        }else if (primerValor == "0" && number == 0){
-            return;
-        }
-        
-        //si no es el digito "."
-        if (number != 10){
-            if (primerValor == "0"){ primerValor = ""; }
-            primerValor = primerValor + "\(number)"
-        }else{
-            if (!decimalAgregado){
-                decimalAgregado = true;
-                primerValor = primerValor + ".";
-            }
-        }
-        tfResultado.text = primerValor;
-    }
-    
-    func formatSecondNumber(number:Int){
-        //manejamos los . decimales y los 0's
-        if (segundoValor == "0" && number == 10) {
-            segundoValor = "0.";
-            decimalAgregado = true;
-            return;
-        }else if (segundoValor == "0" && number == 0){
-            return;
-        }
-        
-        //si no es el digito "."
-        if (number != 10){
-            if (segundoValor == "0"){ segundoValor = ""; }
-            segundoValor = segundoValor + "\(number)"
-        }else{
-            if (!decimalAgregado){
-                decimalAgregado = true;
-                segundoValor = segundoValor + ".";
-            }
-        }
-        tfResultado.text = segundoValor;
-        segundoValorAgregado = true;
-    }
-    
-    
     //Tags : %0, x1, -2, +3, =4
     @IBAction func operadorClicked(_ sender: UIButton) {
         
